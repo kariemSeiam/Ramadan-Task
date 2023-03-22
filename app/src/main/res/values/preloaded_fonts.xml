@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/baloo_tamma_2</item>
+        <item>@font/baloo_tamma_2_bold</item>
+        <item>@font/baloo_tamma_2_medium</item>
+        <item>@font/baloo_tamma_2_semibold</item>
+    </array>
+</resources>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1100"
+        motion:motionInterpolator="@string/material_motion_easing_emphasized"
+
+        >
+
+        <OnClick
+            motion:clickAction="transitionToEnd"
+            motion:targetId="@+id/iv_end_mid_card"
+
+            />
+        <KeyFrameSet
+
+            >
+
+            <KeyAttribute
+                motion:motionTarget="@+id/iv_first_top_view"
+                motion:framePosition="50"
+                android:scaleX="6"
+                android:scaleY="6"
+                motion:motionProgress="@integer/material_motion_duration_short_2"
+            />
+
+
+
+        </KeyFrameSet>
+
+
+    </Transition>
+
+    <ConstraintSet xmlns:motion="http://schemas.android.com/apk/res/com.pigo.ramadantask"
+        android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/iv_first_top_view"
+            android:layout_width="0dp"
+            android:layout_height="500dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toTopOf="@+id/card_quote"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+
+        <Constraint
+            android:id="@+id/card_quote"
+            android:layout_width="0dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="28dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/iv_first_top_view" />
+
+        <Constraint
+            android:id="@+id/card_time_top_start"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:visibility="gone"
+            android:layout_marginTop="54dp"
+            motion:layout_constraintEnd_toStartOf="@+id/card_time_top_end"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/card_quote" />
+
+        <Constraint
+            android:id="@+id/card_time_top_end"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="36dp"
+            android:visibility="gone"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/card_time_top_start"
+            motion:layout_constraintTop_toBottomOf="@+id/card_quote" />
+
+        <Constraint
+            android:id="@+id/card_time_bottom_end"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="26dp"
+            android:visibility="gone"
+
+            motion:layout_constraintEnd_toEndOf="@+id/card_time_top_end"
+            motion:layout_constraintStart_toStartOf="@+id/card_time_top_end"
+            motion:layout_constraintTop_toBottomOf="@+id/card_time_top_end" />
+
+
+        <Constraint
+            android:id="@+id/card_time_bottom_start"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="26dp"
+            android:visibility="gone"
+
+            motion:layout_constraintEnd_toEndOf="@+id/card_time_top_start"
+            motion:layout_constraintStart_toStartOf="@+id/card_time_top_start"
+            motion:layout_constraintTop_toBottomOf="@+id/card_time_top_start" />
+
+        <Constraint
+            android:id="@+id/bottom_layout"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="30dp"
+            android:visibility="gone"
+            motion:layout_constraintBottom_toTopOf="@+id/tv_schedule"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+
+            motion:layout_constraintTop_toBottomOf="@+id/card_time_bottom_start" />
+
+
+        <Constraint
+            android:id="@+id/tv_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18sp"
+            android:visibility="gone"
+
+            android:layout_marginTop="10dp"
+            motion:layout_constraintBottom_toTopOf="@+id/line_stepper"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/bottom_layout" />
+
+
+        <Constraint
+            android:id="@+id/line_stepper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+
+            motion:layout_constraintStart_toStartOf="@+id/tv_schedule"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_schedule" />
+
+        <Constraint
+            android:id="@+id/line_stepper_cards"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingTop="5dp"
+            android:visibility="gone"
+
+            motion:layout_constraintBottom_toBottomOf="@+id/line_stepper"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/line_stepper"
+            motion:layout_constraintTop_toTopOf="@+id/line_stepper" />
+
+
+    </ConstraintSet>
+
+    <ConstraintSet xmlns:motion="http://schemas.android.com/apk/res/com.pigo.ramadantask"
+        android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/iv_first_top_view"
+            android:layout_width="0dp"
+            android:layout_height="500dp"
+            android:visibility="gone"
+            motion:layout_constraintBottom_toTopOf="@+id/card_quote"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+
+        <Constraint
+            android:id="@+id/card_quote"
+            android:layout_width="0dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="28dp"
+            motion:layout_constraintBottom_toTopOf="@+id/card_time_top_start"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/card_time_top_start"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="54dp"
+            motion:layout_constraintEnd_toStartOf="@+id/card_time_top_end"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/card_quote" />
+
+        <Constraint
+            android:id="@+id/card_time_top_end"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="36dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/card_time_top_start"
+            motion:layout_constraintTop_toBottomOf="@+id/card_quote" />
+
+        <Constraint
+            android:id="@+id/card_time_bottom_end"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="26dp"
+            motion:layout_constraintEnd_toEndOf="@+id/card_time_top_end"
+            motion:layout_constraintStart_toStartOf="@+id/card_time_top_end"
+            motion:layout_constraintTop_toBottomOf="@+id/card_time_top_end" />
+
+
+        <Constraint
+            android:id="@+id/card_time_bottom_start"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="26dp"
+            motion:layout_constraintEnd_toEndOf="@+id/card_time_top_start"
+            motion:layout_constraintStart_toStartOf="@+id/card_time_top_start"
+            motion:layout_constraintTop_toBottomOf="@+id/card_time_top_start" />
+
+        <Constraint
+            android:id="@+id/bottom_layout"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="30dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toTopOf="@+id/tv_schedule"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/card_time_bottom_start" />
+
+
+        <Constraint
+            android:id="@+id/tv_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18sp"
+            android:layout_marginTop="10dp"
+            motion:layout_constraintBottom_toTopOf="@+id/line_stepper"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/bottom_layout" />
+
+
+        <Constraint
+            android:id="@+id/line_stepper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="@+id/tv_schedule"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_schedule" />
+
+        <Constraint
+            android:id="@+id/line_stepper_cards"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingTop="5dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/line_stepper"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/line_stepper"
+            motion:layout_constraintTop_toTopOf="@+id/line_stepper" />
+
+    </ConstraintSet>
+</MotionScene>

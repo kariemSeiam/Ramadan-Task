@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f6f4ff"
+    android:nestedScrollingEnabled="true"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbars="vertical"
+    tools:context=".MainActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#f6f4ff"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/activity_main_scene">
+
+            <ImageView
+                android:id="@+id/iv_first_top_view"
+                android:layout_width="0dp"
+                android:layout_height="500dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mock_top"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/card_quote"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_quote"
+                android:layout_width="0dp"
+                android:layout_height="78dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="28dp"
+                android:outlineSpotShadowColor="#684CFF"
+                app:cardBackgroundColor="#FEFEFE"
+                app:cardCornerRadius="80dp"
+                app:cardElevation="1dp"
+                app:layout_constraintBottom_toTopOf="@id/card_time_top_start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_first_top_view"
+                app:strokeColor="@null"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_start_mid_card"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:padding="12dp"
+                        android:src="@drawable/ramadan_card_small"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tv_mid_mid_card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_end_mid_card"
+                        android:layout_width="70dp"
+                        android:layout_height="100dp"
+                        android:padding="16dp"
+                        android:src="@drawable/done_ring_round_svgrepo_com"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_mid_mid_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/tajawalregular"
+                        android:lineSpacingExtra="4sp"
+                        android:minLines="2"
+                        android:text="Ramadan Mubarak!\nReady for fasting?"
+                        android:textColor="#372E68"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_end_mid_card"
+                        app:layout_constraintStart_toEndOf="@+id/iv_start_mid_card"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_time_top_start"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="54dp"
+                android:outlineSpotShadowColor="#8770FF"
+                app:cardBackgroundColor="#E2DCFE"
+                app:cardCornerRadius="42dp"
+                app:cardElevation="22dp"
+                app:layout_constraintEnd_toStartOf="@id/card_time_top_end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_quote"
+                app:strokeColor="#E2DCFE">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+
+                    <TextView
+                        android:id="@+id/tv_time_card_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/tajawalbold"
+                        android:text="Sehri Time"
+                        android:textColor="#332B5C"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_card_one_digital"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/baloo_tamma_2_bold"
+                        android:text="3:40 am"
+                        android:textColor="#8069FC"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_time_card_one" />
+
+                    <ImageView
+                        android:layout_width="60sp"
+                        android:layout_height="60sp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/moon_svgrepo_com"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:tint="#8069FC" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_time_top_end"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="36dp"
+                android:outlineSpotShadowColor="#422CB1"
+                app:cardBackgroundColor="#422CB1"
+                app:cardCornerRadius="34dp"
+                app:cardElevation="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/card_time_top_start"
+                app:layout_constraintTop_toBottomOf="@id/card_quote"
+                app:strokeColor="#422CB1"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_time_card_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/tajawalbold"
+                        android:text="Remaining"
+                        android:textColor="#f6f4ff"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_bottom_card_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/tajawalbold"
+                        android:text="15:20 pm"
+                        android:textColor="#f6f4ff"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_card_three_digital"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/baloo_tamma_2_bold"
+                        android:text="Dhuhr"
+                        android:textColor="#FFAB00"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_time_card_three" />
+
+                    <ImageView
+                        android:layout_width="42sp"
+                        android:layout_height="42sp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/sun_svgrepo_com"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_time_bottom_end"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="26dp"
+                android:outlineSpotShadowColor="#FFB620"
+                app:cardBackgroundColor="#FFEECB"
+                app:cardCornerRadius="42dp"
+                app:cardElevation="22dp"
+                app:layout_constraintEnd_toEndOf="@id/card_time_top_end"
+                app:layout_constraintStart_toStartOf="@id/card_time_top_end"
+                app:layout_constraintTop_toBottomOf="@id/card_time_top_end"
+                app:strokeColor="#FFEECB">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_time_card_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/tajawalbold"
+                        android:text="Iftar Time"
+                        android:textColor="#332B5C"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_card_four_digital"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/baloo_tamma_2_bold"
+                        android:text="6:45 pm"
+                        android:textColor="#D6B400"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_time_card_four" />
+
+                    <ImageView
+                        android:layout_width="60sp"
+                        android:layout_height="60sp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/sun_behind_large_cloud_svgrepo_com"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_time_bottom_start"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="26dp"
+                android:outlineSpotShadowColor="#5E41FF"
+                app:cardBackgroundColor="#8069FC"
+                app:cardCornerRadius="42dp"
+                app:cardElevation="22dp"
+                app:layout_constraintEnd_toEndOf="@id/card_time_top_start"
+                app:layout_constraintStart_toStartOf="@id/card_time_top_start"
+                app:layout_constraintTop_toBottomOf="@id/card_time_top_start"
+                app:strokeColor="#8069FC">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_time_card_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/tajawalbold"
+                        android:text="Next Prayer"
+                        android:textColor="#f6f4ff"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_bottom_card_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/tajawalbold"
+                        android:text="14:24 pm"
+                        android:textColor="#f6f4ff"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_time_card_two_digital"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/baloo_tamma_2_bold"
+                        android:text="Asr"
+                        android:textColor="#FFAB00"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_time_card_two" />
+
+                    <ImageView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="50dp"
+                        android:src="@drawable/cloud_svgrepo_com"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="30dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/tv_schedule"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_time_bottom_start">
+
+                <TextView
+                    android:id="@+id/tv_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18sp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/baloo_tamma_2_bold"
+                    android:text="| Categories"
+                    android:textColor="#6A57CF"
+                    android:textSize="28sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_categories">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_cat_one"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:outlineSpotShadowColor="#684CFF"
+                        app:cardBackgroundColor="#FEFEFE"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/card_cat_two"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@null">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/iv_pray"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/pray_day_islam_svgrepo_com"
+                                app:layout_constraintBottom_toTopOf="@id/tv_pray"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_pray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_tamma_2_bold"
+                                android:text="Prayer Time"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/iv_pray" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_cat_two"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:outlineSpotShadowColor="#684CFF"
+                        app:cardBackgroundColor="#FEFEFE"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/card_cat_three"
+                        app:layout_constraintStart_toEndOf="@id/card_cat_one"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@null">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/iv_mosq"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/mosque_svgrepo_com"
+                                app:layout_constraintBottom_toTopOf="@id/tv_mosq"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_mosq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_tamma_2_bold"
+                                android:text="Mosque Finder"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/iv_mosq" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_cat_three"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:outlineSpotShadowColor="#684CFF"
+                        app:cardBackgroundColor="#FEFEFE"
+                        app:cardCornerRadius="28dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/card_cat_two"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@null">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            >
+
+                            <ImageView
+                                android:id="@+id/iv_quran"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/quran_islam_svgrepo_com"
+                                app:layout_constraintBottom_toTopOf="@id/tv_quran"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_quran"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_tamma_2_bold"
+                                android:text="Al-Quran"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/iv_quran" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/baloo_tamma_2_bold"
+                android:text="| Schedule"
+                android:textColor="#6A57CF"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toTopOf="@id/line_stepper"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottom_layout" />
+
+            <LinearLayout
+                android:id="@+id/line_stepper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_schedule"
+                app:layout_constraintTop_toBottomOf="@id/tv_schedule">
+
+
+                <View
+                    android:id="@+id/view_pray_one"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/circular_target_variant_svgrepo_com" />
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/ic_line"
+                    android:backgroundTint="#CBC1FF" />
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/circular_target_variant_svgrepo_com" />
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/ic_line"
+                    android:backgroundTint="#CBC1FF" />
+
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/circular_target_variant_svgrepo_com" />
+
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/ic_line"
+                    android:backgroundTint="#CBC1FF" />
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="36dp"
+                    android:background="@drawable/circular_target_variant_svgrepo_com" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_stepper_cards"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/line_stepper"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/line_stepper"
+                app:layout_constraintTop_toTopOf="@id/line_stepper">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mCard_pray_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginBottom="10dp"
+                    android:outlineSpotShadowColor="#684CFF"
+                    app:cardBackgroundColor="#FEFEFE"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@null">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/miv_pray_view_one"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginStart="24dp"
+                            android:background="@drawable/rounded_back_image"
+                            android:padding="5sp"
+                            android:src="@drawable/moon_svgrepo_com"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="#684CFF" />
+
+                        <TextView
+                            android:id="@+id/mtv_pray_view_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:layout_marginBottom="-5sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="Shouor"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toTopOf="@id/m2tv_pray_view_one"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_one"
+                            app:layout_constraintTop_toTopOf="@id/miv_pray_view_one" />
+
+                        <TextView
+                            android:id="@+id/m2tv_pray_view_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="02:00 AM - 04:36 AM"
+                            android:textColor="#C8C8CA"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_one"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_one"
+                            app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_one" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mCard_pray_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginBottom="10dp"
+                    android:outlineSpotShadowColor="#684CFF"
+                    app:cardBackgroundColor="#FEFEFE"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@null">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/miv_pray_view_two"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginStart="24dp"
+                            android:background="@drawable/rounded_back_image"
+                            android:padding="5sp"
+                            android:src="@drawable/sun_svgrepo_com"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="#ffd500" />
+
+                        <TextView
+                            android:id="@+id/mtv_pray_view_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:layout_marginBottom="-5sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="Dhuhur"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toTopOf="@id/m2tv_pray_view_two"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_two"
+                            app:layout_constraintTop_toTopOf="@id/miv_pray_view_two" />
+
+                        <TextView
+                            android:id="@+id/m2tv_pray_view_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="13:07 PM - 04:29 PM"
+                            android:textColor="#C8C8CA"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_two"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_two"
+                            app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_two" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mCard_pray_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginBottom="10dp"
+                    android:outlineSpotShadowColor="#684CFF"
+                    app:cardBackgroundColor="#FEFEFE"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@null">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/miv_pray_view_three"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginStart="24dp"
+                            android:background="@drawable/rounded_back_image"
+                            android:padding="5sp"
+                            android:src="@drawable/cloud_svgrepo_com"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/mtv_pray_view_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:layout_marginBottom="-5sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="Asr"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toTopOf="@id/m2tv_pray_view_three"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_three"
+                            app:layout_constraintTop_toTopOf="@id/miv_pray_view_three" />
+
+                        <TextView
+                            android:id="@+id/m2tv_pray_view_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="04:30 PM - 05:12 PM"
+                            android:textColor="#C8C8CA"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_three"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_three"
+                            app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_three" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mCard_pray_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginBottom="10dp"
+                    android:outlineSpotShadowColor="#684CFF"
+                    app:cardBackgroundColor="#FEFEFE"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/line_stepper"
+                    app:layout_constraintTop_toTopOf="@id/line_stepper"
+
+                    app:strokeColor="@null">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/miv_pray_view_four"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginStart="24dp"
+                            android:background="@drawable/rounded_back_image"
+                            android:padding="5sp"
+                            android:src="@drawable/sun_behind_large_cloud_svgrepo_com"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/mtv_pray_view_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:layout_marginBottom="-5sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="Iftar"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toTopOf="@id/m2tv_pray_view_four"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_four"
+                            app:layout_constraintTop_toTopOf="@id/miv_pray_view_four" />
+
+                        <TextView
+                            android:id="@+id/m2tv_pray_view_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12sp"
+                            android:fontFamily="@font/baloo_tamma_2_bold"
+                            android:includeFontPadding="false"
+                            android:text="06:16 PM - 07:28 PM"
+                            android:textColor="#C8C8CA"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@id/miv_pray_view_four"
+                            app:layout_constraintStart_toEndOf="@id/miv_pray_view_four"
+                            app:layout_constraintTop_toBottomOf="@id/mtv_pray_view_four" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
